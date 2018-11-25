@@ -1,4 +1,6 @@
-<div class="card" style="background-color: #e9ecef;">
+<%= javascript_include_tag 'jquery.raty.js', "data-turbolinks-track": false %>
+
+<div class="card" style="background-color: ivory;">
   <div class="card-body">
     <div class="row">
       <div class="col-md-4">
@@ -38,9 +40,11 @@
         <% else %>
           <% @reviews.each do |review| %>
             <div class="reviews">
-              <p><%= review.rating %></p>
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
               <p><%= review.comment %></p>
             </div>
+              
+      </div>
           <% end %>
         <% end %>
       </div>
@@ -50,3 +54,14 @@
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
+
+<!-- this script calls raty function from raty.js file on div with class star-rating --> 
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
