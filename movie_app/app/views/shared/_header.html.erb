@@ -1,0 +1,42 @@
+<!-- ml-md-auto : apply this for right alligning things in navbar -->
+
+<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-lg">
+  <a class="navbar-brand" href="<%=root_path%>">
+    <img src="https://openclipart.org/image/2400px/svg_to_png/262404/hp_gold_star.png" width="40" height="40" class="d-inline-block align-top" alt="">
+    Filmy Pundit
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %>&nbsp</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <li class="nav-item">
+              <%= link_to "New Movie", new_movie_path, class: "dropdown-item"%>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
+            </li>
+          </div>
+        </div>        
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link"%>
+        </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0  ml-md-auto">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+    
