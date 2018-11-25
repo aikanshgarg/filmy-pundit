@@ -1,9 +1,9 @@
 <!-- ml-md-auto : apply this for right alligning things in navbar -->
 
-<nav class="navbar fixed-top navbar-dark bg-dark navbar-expand-lg">
+<nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: black;">
   <a class="navbar-brand" href="<%=root_path%>">
-<!--     <img src="https://openclipart.org/image/2400px/svg_to_png/262404/hp_gold_star.png" width="40" height="40" class="d-inline-block align-top" alt="">
- -->    Fresh Tomatoes
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rotten_Tomatoes.svg/1009px-Rotten_Tomatoes.svg.png" width="40" height="40" class="d-inline-block align-top" alt="">
+    Fresh Tomatoes
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,7 +12,7 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <div class="btn-group">
-          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %>&nbsp</button>
+          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: black; color: #fff;"><%= current_user.email %>&nbsp</button>
           <div class="dropdown-menu dropdown-menu-right">
             <li class="nav-item">
               <%= link_to "New Movie", new_movie_path, class: "dropdown-item"%>

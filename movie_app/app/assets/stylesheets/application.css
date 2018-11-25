@@ -14,21 +14,17 @@
  *= require_self
  */
 
-body {
-	color: #fff;
-	background-color: black; 
-}
 
 
-footer {
-	color: #fff;
-	background: #212529;;
-	height: 40px;
+.footer {
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
     text-align: center;
-    padding: 10px;
-    padding-bottom: 0px;
 }
-
 
 .review_title {
 	margin: 0 0 20px 0;
@@ -39,5 +35,7 @@ footer {
 }
 
 .star-rating {
+	padding: 15px 0;
+	border-bottom: 1px solid #EAEAEA;
 		padding-bottom: 8px;
 	}

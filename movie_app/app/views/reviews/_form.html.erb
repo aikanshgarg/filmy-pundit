@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'jquery.raty.js', "data-turbolinks-track": false %>
+
 <%= form_with(model: review, url: [@movie, review], local: true) do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +14,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%#= form.label :rating %>
+    <%#= form.number_field :rating %>
+    <div id="star-rating"></div>
   </div>
 
   <div class="field">
@@ -25,3 +28,13 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<!-- this script calls raty function from raty.js file on div with id star-rating 
+This file doesn't have readOnly so that we can change our rating also--> 
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating'
+  });
+</script>
