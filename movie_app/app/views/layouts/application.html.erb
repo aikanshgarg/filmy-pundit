@@ -18,24 +18,24 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-    <%= favicon_link_tag 'https://openclipart.org/image/2400px/svg_to_png/262404/hp_gold_star.png' %>
+    <%= favicon_link_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Rotten_Tomatoes.svg/1009px-Rotten_Tomatoes.svg.png' %>
 
 
   </head>
 
-  <body>
+  <body style="background-color: black;">
 
     <%= render 'shared/header' %>
 
     <div class="container">
     <!-- FLASH MESSAGES -->
     <% if flash[:notice] %>
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success" role="alert" style="margin-top: 22%;">
         <p class="notice"><%= notice %></p>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-warning" role="alert" style="margin-top: 22%;">
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
@@ -45,9 +45,9 @@
      <%= yield %> 
     </div>
 
-    <!-- <footer>
-      Made with <i class="fa fa-heart"></i> by Aikansh Garg
-    </footer> -->
+    <footer style="font-size: 60%;">
+        Copyright &copy; Aikansh Garg, 2018. All rights reserved
+    </footer>
 
 
 

@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" style="background-color: #e9ecef;">
   <div class="card-body">
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag @movie.image.url(:medium) %>
+        <%= image_tag @movie.image.url(:medium), class: "img-fluid shadow-lg mb-5 bg-white rounded"%>
         <div class="table-responsive">
           <table class="table">
             <tr>
@@ -26,7 +26,23 @@
               <td><%= @movie.rating %></td>
             </tr>
           </table>
+          <%= link_to "Write A Review",  new_movie_review_path(@movie) %>
         </div>
+      </div>
+      <div class="col-md-7 col-md-offset-1">
+        <h1 class="review_title"><%=@movie.title%></h1>
+        <p><%= @movie.description %></p>
+        <% if @reviews.blank? %>
+          <h3>No reviews yet, would yoou like to be the first one to add yours!</h3>
+          <%= link_to "Write A Review", new_movie_review_path(@movie), class: "btn btn-danger" %>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <p><%= review.rating %></p>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
 	belongs_to :user
+	has_many :reviews
 
 	# "400x600#" means image will be cropped to 400x600
 

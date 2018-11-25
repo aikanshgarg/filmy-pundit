@@ -15,21 +15,29 @@
  */
 
 body {
-	background: #8E0E00;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+	color: #fff;
+	background-color: black; 
 }
 
 
 footer {
-	color: white;
-	font-weight: bolder;
-	background: #0f0c29;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	height: 80px;
+	color: #fff;
+	background: #212529;;
+	height: 40px;
     text-align: center;
-    margin-top: 30px;
-    padding: 30px;	
+    padding: 10px;
+    padding-bottom: 0px;
 }
+
+
+.review_title {
+	margin: 0 0 20px 0;
+}
+.reviews {
+	padding: 15px 0;
+	border-bottom: 1px solid #EAEAEA;
+}
+
+.star-rating {
+		padding-bottom: 8px;
+	}
