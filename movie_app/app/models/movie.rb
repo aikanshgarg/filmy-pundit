@@ -1,0 +1,8 @@
+class Movie < ApplicationRecord
+	belongs_to :user
+
+	# "400x600#" means image will be cropped to 400x600
+
+	 has_attached_file :image, styles: { medium: "400x600#"}
+ 	 validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+end
